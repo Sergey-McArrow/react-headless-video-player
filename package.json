@@ -58,10 +58,10 @@
     "typescript": "^5.9.3"
   },
   "scripts": {
-    "build": "bunx tsup",
-    "dev": "bunx tsup --watch",
+    "build": "tsup",
+    "dev": "tsup --watch",
     "clean": "rm -rf dist",
-    "typecheck": "bunx tsc --noEmit",
+    "typecheck": "tsc --noEmit",
     "test": "bun test",
     "playground": "bun run playground/server.ts",
     "prepublishOnly": "bun run typecheck && bun run test && bun run build"
