@@ -64,6 +64,6 @@
     "typecheck": "tsc --noEmit",
     "test": "bun test",
     "playground": "bun run playground/server.ts",
-    "prepublishOnly": "bun run typecheck && bun run test && bun run build"
+    "prepublishOnly": "bun run build && bun run typecheck && bun run test"
   }
 }

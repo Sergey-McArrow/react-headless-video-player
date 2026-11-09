@@ -742,6 +742,7 @@ describe('react-headless-video-player comprehensive suite', () => {
       expect(cssFile).toContain('.rhvp-container')
       expect(cssFile).toContain('--rhvp-primary')
 
+      // @ts-ignore - dist/index.js is created during build
       const distEsm = await import('../dist/index.js')
       expect(typeof distEsm.VideoPlayer).toBe('object') // forwardRef object
       expect(typeof distEsm.VideoProvider).toBe('function')

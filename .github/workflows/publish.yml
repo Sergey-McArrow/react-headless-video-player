@@ -32,9 +32,9 @@ jobs:
 
       - name: Verify and build
         run: |
+          bun run build
           bun run typecheck
           bun run test
-          bun run build
 
       - name: Publish to NPM with SLSA Provenance
         run: npm publish --provenance --access public
