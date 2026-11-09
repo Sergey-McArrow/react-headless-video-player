@@ -1,6 +1,6 @@
 # react-headless-video-player
 
-[![npm version](https://badge.fury.io/js/react-headless-video-player.svg)](https://www.npmjs.com/package/react-headless-video-player)
+[![npm version](https://img.shields.io/npm/v/react-headless-video-player.svg)](https://www.npmjs.com/package/react-headless-video-player)
 [![TypeScript](https://img.shields.io/badge/TypeScript-Ready-blue.svg)](https://www.typescriptlang.org/)
 
 Headless, customizable React video player with shared context to ensure only one

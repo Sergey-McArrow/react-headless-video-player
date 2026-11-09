@@ -13,6 +13,15 @@
     "nextjs"
   ],
   "license": "MIT",
+  "author": "Sergey McArrow <info@mcarrow.online>",
+  "homepage": "https://github.com/Sergey-McArrow/react-headless-video-player#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sergey-McArrow/react-headless-video-player.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Sergey-McArrow/react-headless-video-player/issues"
+  },
   "type": "module",
   "sideEffects": [
     "*.css"
