@@ -1,0 +1,15 @@
+# Dependencies
+node_modules/
+
+# Build artifacts
+dist/
+*.tgz
+
+# Lockfiles (using bun.lock)
+package-lock.json
+
+# OS & Editor
+.DS_Store
+
+# Antigravity Knowledge Base
+.knowledge/

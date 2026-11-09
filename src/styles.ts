@@ -1,0 +1,168 @@
+export const RHVP_STYLE_ID = 'rhvp-styles'
+
+export const RHVP_CSS = `
+.rhvp-container {
+  position: relative;
+  --rhvp-primary: #a3e635;
+  --rhvp-bg: rgba(0, 0, 0, 0.5);
+  --rhvp-hover: rgba(0, 0, 0, 0.65);
+  --rhvp-text: #ffffff;
+}
+
+.rhvp-container:focus-visible {
+  outline: 2px solid var(--rhvp-primary);
+  outline-offset: 2px;
+}
+
+.rhvp-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.rhvp-controls {
+  opacity: 1;
+  transition: opacity 250ms ease;
+}
+
+.rhvp-controls--hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.rhvp-btn-wrap {
+  position: absolute;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rhvp-btn-wrap--top-right {
+  top: 1.25rem;
+  right: 1.25rem;
+}
+
+.rhvp-btn-wrap--center {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.rhvp-btn-wrap--bottom-left {
+  bottom: 2.5rem;
+  left: 1.25rem;
+}
+
+.rhvp-btn-wrap--bottom-right {
+  bottom: 2.5rem;
+  right: 1.25rem;
+}
+
+.rhvp-btn-wrap--mute-offset {
+  top: 5rem;
+  right: 1.25rem;
+}
+
+.rhvp-btn-wrap--mute-top {
+  top: 1.25rem;
+  right: 1.25rem;
+}
+
+.rhvp-btn {
+  cursor: pointer;
+  border-radius: 9999px;
+  padding: 0.75rem;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--rhvp-bg);
+  color: var(--rhvp-primary);
+  transition: background-color 150ms ease, transform 150ms ease, color 150ms ease;
+}
+
+.rhvp-btn:hover {
+  background-color: var(--rhvp-hover);
+}
+
+.rhvp-btn:focus-visible {
+  outline: 2px solid var(--rhvp-primary);
+  outline-offset: 2px;
+}
+
+.rhvp-bottom-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 20;
+  width: 100%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+  transition: opacity 250ms ease;
+}
+
+.rhvp-time {
+  margin-bottom: 0.5rem;
+  margin-left: 1.25rem;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  color: var(--rhvp-text);
+  font-variant-numeric: tabular-nums;
+}
+
+.rhvp-progress-row {
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+
+.rhvp-progress-track {
+  position: relative;
+  height: 0.5rem;
+  width: 100%;
+  cursor: pointer;
+  border-radius: 9999px;
+  background-color: rgba(255, 255, 255, 0.2);
+  touch-action: none;
+  user-select: none;
+  overflow: hidden;
+}
+
+.rhvp-progress-track:focus-visible {
+  outline: 2px solid var(--rhvp-primary);
+  outline-offset: 2px;
+}
+
+.rhvp-progress-buffered {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  border-radius: 9999px;
+  background-color: rgba(255, 255, 255, 0.35);
+  pointer-events: none;
+  transition: width 150ms linear;
+}
+
+.rhvp-progress-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  border-radius: 9999px;
+  background-color: var(--rhvp-primary);
+  pointer-events: none;
+}
+`.trim()
+
+export function ensureStylesInjected(): void {
+  if (typeof document === 'undefined') return
+  if (document.getElementById(RHVP_STYLE_ID)) return
+
+  const styleEl = document.createElement('style')
+  styleEl.id = RHVP_STYLE_ID
+  styleEl.textContent = RHVP_CSS
+  document.head.appendChild(styleEl)
+}
+
