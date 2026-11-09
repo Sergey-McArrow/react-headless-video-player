@@ -1,6 +1,6 @@
 {
   "name": "react-headless-video-player",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Headless, customizable React video player with context to manage single active playback across the page.",
   "keywords": [
     "react",
