@@ -21,11 +21,10 @@ jobs:
         with:
           bun-version: latest
 
-      - name: Setup Node.js for NPM Provenance attestation
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: "22"
-          registry-url: "https://registry.npmjs.org"
 
       - name: Install dependencies
         run: bun install --frozen-lockfile
@@ -38,5 +37,3 @@ jobs:
 
       - name: Publish to NPM with SLSA Provenance
         run: npm publish --provenance --access public
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
